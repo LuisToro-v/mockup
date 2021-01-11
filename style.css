@@ -13,7 +13,6 @@ header{
     display: inline-flex;
     width: 100%;
     padding: 15px 0px;
-    justify-content: center;
     align-items: center;
 }
 .logo{
@@ -34,22 +33,24 @@ ul{
 .tab{
     padding: 15px 10px;
 }
+body{
+    width: 100%;
+}
 .img-container{
     background-color: #d7dbd8;
     display: flex;
     min-height: 300px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    width: 100%;
 }
 
 .img-container img{
     border-radius: 50%;
 }
 
-body{
-    width:100%;
-}
+
 .container{
     display: inline-flex;
     line-height: 1.5;
@@ -59,7 +60,6 @@ body{
 
 #col-1{
     width: 30%;
-    flex-shrink: 2;
   }
   
   #col-2{
@@ -73,7 +73,7 @@ body{
     
 }
   #team-img{
-      width: 100%;
+      max-width: 100%;
       max-height: 200px;
   }
 
@@ -86,3 +86,29 @@ body{
   .tab a:hover{
       color:#fff;
   }
+
+  @media only screen and (max-width: 800px){
+      header{
+        flex-direction: column;
+      }
+      .logo, .navBar{
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+      }
+      #col-1,
+      #col-2{
+          width: auto;
+          text-align: center;
+      }
+
+      #col-1 p,
+      #col-2 p{
+          text-align: left;
+      }
+
+}
